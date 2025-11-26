@@ -1,0 +1,60 @@
+  /* Responsive overrides for UEGC.html */
+  :root{
+    --bg:#DB663C ;
+    --card:#0f1724;
+    --accent:#A8EB21;
+    --muted:#AAB3C2;
+  }
+
+  /* Basic resets for elements we modified */
+  .hero-row{ display:flex; gap:12px; align-items:center; }
+  .avatar{ width:56px; height:56px; border-radius:12px;  display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* Make envelope responsive */
+  #envelope{ max-width:100%; width:80%; height:300px; box-sizing:border-box; }
+
+  /* Ensure the letter scales on small screens */
+  #letter{ width:90%; left:50%; transform:translate(-50%,-50%) translateY(30px); }
+
+  /* Buttons and wrapper tweaks */
+  .wrapper{ padding:28px; }
+
+  /* Hide lightning effects on very small screens to reduce noise & bandwidth */
+  @media (max-width:480px){
+    body{ font-size:16px; }
+    .hero-row{ align-items:flex-start; }
+    .avatar{ width:48px; height:48px; border-radius:10px; padding-top: 75px;}
+    h1{ font-size:34px !important; line-height:1.05 !important; }
+    .typed{ font-size:16px !important; }
+    #envelope{ width:92%; height:220px; }
+    #lightning-container{ display:none !important; }
+    .wrapper{ padding:18px; border-radius:18px; }
+    .buttons-row{ flex-direction:column; gap:8px; }
+  }
+
+  @media (min-width:481px) and (max-width:900px){
+    h1{ font-size:42px !important; }
+    .avatar{ width:52px; height:52px; }
+    #envelope{ width:92%; height:260px; }
+  }
+
+  /* Small aesthetic fix for left-aligned letter text */
+  #letter, #letter *{ text-align:left !important; }
+  @media (max-width: 480px) {
+    #letter {
+      width: 92vw;
+      max-height: 75vh;
+      padding: 10px;
+    }
+
+    .typed {
+      font-size: 22px !important; /* giữ đẹp, không tràn khi gõ chữ */
+      line-height: 1.45 !important;
+    }
+  }
+  @media (max-height: 600px) {
+    #letter {
+      max-height: 65vh;
+    }
+  }

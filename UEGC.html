@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Chớp — Lời cảm ơn từ UEGC</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Lobster&family=Pacifico&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=VT323&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#DB663C ;
+  --accent:#A8EB21;
+  --muted:#AAB3C2;
+}
+
+/* BODY */
+body{
+  margin:0;
+  background:linear-gradient(180deg,#A8EB21,var(--bg));
+  font-family:"Prompt",sans-serif;
+  color:#A8EB21;
+}
+
+/* Layout */
+.stage{
+  display:flex;
+  justify-content:center;
+  padding:28px 12px;
+}
+.wrapper{
+  width:100%;
+  max-width:900px;
+  background:rgba(255,255,255,0.05);
+  padding:26px;
+  border-radius:24px;
+  box-shadow:0 0 40px rgba(0,0,0,0.35);
+}
+
+/* HERO */
+.hero-row{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  width:100%;
+  padding:10px 15px;
+}
+
+.hero-img{
+  width:90px;
+  height:auto;
+  object-fit:contain;
+}
+
+.hero-text{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  height:110px; /* cố định để chia 3 phần cân đối */
+}
+
+.hero-small{
+  font-size:12px;
+  color:#ffffff;
+  text-transform:uppercase;
+  font-family:"Anton";
+  letter-spacing:0.3mm;
+  flex:1;         /* phần nhỏ = 1 */
+  display:flex;
+  align-items:center;
+}
+
+.hero-big{
+  font-size:36px;
+  font-weight:700;
+  color:#ed7d27;
+  letter-spacing:1px;
+  font-family:"VT323", monospace;
+  flex:2;         /* phần lớn = 2 */
+  display:flex;
+  align-items:center;
+}
+
+/* Mobile tối ưu */
+@media (max-width:480px){
+  .hero-img{ width:70px; }
+  .hero-big{ font-size:18px; }
+  .hero-text{ height:84px; }
+}
+
+/* ENVELOPE — V3 FIX */
+.envelope-wrapper{
+  margin-top:16px;
+  width:100%;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:350px;   /* tạo không gian ổn định cho envelope + letter */
+}
+
+#envelope{
+  width:90%;
+  max-width:700px;
+  height:180px;
+  background:#fff;
+  border-radius:12px;
+  border:2px solid #eee;
+  cursor:pointer;
+
+  position:absolute;
+  top:40px;   /* KHÔNG bị mất khoảng trống */
+  left:50%;
+  transform:translateX(-50%);
+  transition:1s ease;
+  z-index:5;
+}
+
+#envelope.open{
+  transform:translateX(-200%) rotate(-5deg);
+  opacity:0;
+}
+
+/* LETTER */
+#letter{
+  width:90%;
+  max-width:600px;
+  background:#fff;
+  padding:22px 26px;
+  border-radius:20px;
+  margin-top:40px;
+  opacity:0;
+  color:#062236;
+  font-size:22px;
+  line-height:1.6;
+  transition:0.9s ease;
+  z-index:1;
+}
+
+#envelope.open + #letter{
+  opacity:1;
+}
+
+/* Typing */
+.typed{
+  white-space:pre-wrap;
+  font-family:"Dancing Script", cursive;
+  font-size:26px;
+  line-height:1.6;
+}
+.cursor{
+  display:inline-block;
+  width:10px;
+  height:24px;
+  background:#062236;
+  animation:blink 1s steps(2) infinite;
+}
+@keyframes blink{ 50%{opacity:0;} }
+
+/* BUTTON */
+.buttons-row{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+}
+.btn{
+  background:linear-gradient(90deg,var(--accent),#ffb84d);
+  border:0;
+  padding:12px 22px;
+  border-radius:14px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* Lightning */
+#lightning-container{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:999;
+}
+.bolt{
+  position:absolute;
+  opacity:0;
+  animation:flash 1.8s ease-out;
+  filter:drop-shadow(0 0 25px #fff);
+}
+@keyframes flash{
+  0%,88%,100%{opacity:0;}
+  90%{opacity:1;}
+  92%{opacity:.4;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- Lightning -->
+<div id="lightning-container"></div>
+
+<main class="stage">
+<div class="wrapper">
+
+  <section class="hero">
+    <div class="hero-row">
+      <img class="hero-img" src="assets/img/AVA-01.png" alt="" />
+
+      <div class="hero-text">
+        <div class="hero-small top">
+          CÂU LẠC BỘ GUITAR ĐH SƯ PHẠM TPHCM – UEGC
+        </div>
+
+        <div class="hero-big">
+          UEGC – Lời cảm ơn
+        </div>
+
+        <div class="hero-small bottom">
+          Một lời tri ân ấm áp gửi tới tất cả các bạn đã đến và cùng chung vui với câu lạc bộ.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Envelope -->
+  <div class="envelope-wrapper">
+    <div id="envelope"></div>
+
+    <div id="letter">
+      <span id="text" class="typed"></span><span class="cursor"></span>
+    </div>
+  </div>
+
+  <div class="buttons-row">
+    <button class="btn" id="openBtn">Mở thư</button>
+  </div>
+
+  <footer style="text-align:center;margin-top:20px;color:#eee;font-family:'Anton';letter-spacing:2px;">
+    UEGC — CHROMATIC NIGHT III: “CHỚP”
+  </footer>
+
+</div>
+</main>
+
+<script>
+/* Lightning */
+const container=document.getElementById("lightning-container");
+
+const lightningBig=`<svg viewBox="0 0 100 200" width="80">
+  <polygon points="60,0 20,110 55,110 30,200 80,80 45,80"
+    fill="#ffe05c" stroke="#fff8" stroke-width="6"/>
+</svg>`;
+
+const lightningSmall=`<svg viewBox="0 0 60 120" width="45">
+  <polygon points="30,0 10,60 28,60 15,120 45,40 22,40"
+    fill="#ffe05c" stroke="#fff8" stroke-width="4"/>
+</svg>`;
+
+function createLightning(){
+  const bolt=document.createElement("div");
+  bolt.className="bolt";
+  bolt.innerHTML=Math.random()<0.6?lightningBig:lightningSmall;
+  bolt.style.left=(10+Math.random()*80)+"%";
+  bolt.style.top=(5+Math.random()*50)+"%";
+  bolt.style.transform=`scale(${0.7+Math.random()*1.2})`;
+  container.appendChild(bolt);
+  setTimeout(()=>bolt.remove(),2000);
+}
+(function loop(){
+  createLightning();
+  setTimeout(loop,2000+Math.random()*3000);
+})();
+
+/* Typing */
+const TEXT=`Gửi bạn — người bạn đồng hành của UEGC.
+
+Cảm ơn bạn đã dành thời gian, nụ cười và sự sẻ chia để làm một đêm của chúng ta trở nên rực rỡ. Mỗi tràng pháo tay, mỗi ánh mắt nán lại, mỗi câu chuyện nhỏ — tất cả đã góp nên một bức tranh sống động mang tên "Chớp".
+
+UEGC muốn gửi lời biết ơn sâu sắc vì sự hiện diện của bạn. Hy vọng rằng khoảnh khắc hôm ấy đã ở lại như một tia chớp ấm áp — bất chợt, rực rỡ và khó quên.
+
+Hẹn gặp lại ở những chương tiếp theo.
+
+Thân mến,
+Ban tổ chức CHROMATIC NIGHT III: “CHỚP”`;
+
+const letterBox=document.getElementById("text");
+
+function typeText(){
+  letterBox.textContent="";
+  let i=0;
+  (function step(){
+    if(i<TEXT.length){
+      letterBox.textContent+=TEXT[i];
+      i++;
+      setTimeout(step,24+Math.random()*32);
+    }
+  })();
+}
+
+/* Open Letter */
+const envelope=document.getElementById("envelope");
+const openBtn=document.getElementById("openBtn");
+let opened=false;
+
+function openLetter(){
+  if(opened) return;
+  opened=true;
+  envelope.classList.add("open");
+  typeText();
+}
+
+openBtn.addEventListener("click",openLetter);
+envelope.addEventListener("click",openLetter);
+</script>
+
+</body>
+</html>
