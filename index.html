@@ -7,9 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bungee+Spice&family=Lobster&family=Pacifico&family=Prompt:wght@100;200;300;400;500;600;700;800;900&family=VT323&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lobster&family=Pacifico&family=VT323&display=swap" rel="stylesheet">
 <style>
 
 :root{
@@ -54,6 +52,7 @@ body{
   width:90px;
   height:auto;
   object-fit:contain;
+  border-radius: 12px;
 }
 
 .hero-text{
@@ -65,7 +64,7 @@ body{
 }
 
 .hero-small{
-  font-size:12px;
+  font-size:24px;
   color:#ffffff;
   text-transform:uppercase;
   font-family:"Anton";
@@ -91,6 +90,7 @@ body{
   .hero-img{ width:70px; }
   .hero-big{ font-size:18px; }
   .hero-text{ height:84px; }
+  .hero-small{ font-size:12px; }
 }
 
 /* ENVELOPE — V3 FIX */
@@ -149,7 +149,9 @@ body{
 /* Typing */
 .typed{
   white-space:pre-wrap;
-  font-family:"Dancing Script", cursive;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   font-size:26px;
   line-height:1.6;
 }
@@ -221,7 +223,7 @@ body{
         </div>
 
         <div class="hero-small bottom">
-          Một lời tri ân ấm áp gửi tới tất cả các bạn đã đến và cùng chung vui với câu lạc bộ.
+          ⚡🥁🎹🎸🎤🎷⚡
         </div>
       </div>
     </div>
@@ -278,16 +280,13 @@ function createLightning(){
 })();
 
 /* Typing */
-const TEXT=`Gửi bạn — người bạn đồng hành của UEGC.
+const TEXT=`Cảm ơn khách iu đã dành thời gian tới quẩy cùng Chớp đêm nay nhaaa⚡️
 
-Cảm ơn bạn đã dành thời gian, nụ cười và sự sẻ chia để làm một đêm của chúng ta trở nên rực rỡ. Mỗi tràng pháo tay, mỗi ánh mắt nán lại, mỗi câu chuyện nhỏ — tất cả đã góp nên một bức tranh sống động mang tên "Chớp".
+Hy vọng bạn đã có một đêm vui hết nấc, chụp được nhiều ảnh đẹp và mang về một chiếc kỷ niệm “đi một lần là nhớ hoài”.
 
-UEGC muốn gửi lời biết ơn sâu sắc vì sự hiện diện của bạn. Hy vọng rằng khoảnh khắc hôm ấy đã ở lại như một tia chớp ấm áp — bất chợt, rực rỡ và khó quên.
+UEGC thật sự biết ơn vì bạn đã chọn ở đây cùng chúng mình giữa cả tỉ cuộc hẹn ngoài kia.
 
-Hẹn gặp lại ở những chương tiếp theo.
-
-Thân mến,
-Ban tổ chức CHROMATIC NIGHT III: “CHỚP”`;
+Và cuối cùng, hẹn gặp lại các bạn ở những cú chớp tiếp theo sẽ còn bùng nữa ⚡💛`;
 
 const letterBox=document.getElementById("text");
 
